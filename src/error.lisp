@@ -1,4 +1,4 @@
-;;;; conditions.lisp
+;;;; error.lisp
 
 (in-package #:cl-priority-queues)
 

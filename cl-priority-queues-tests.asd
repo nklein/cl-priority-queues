@@ -14,6 +14,6 @@
                                              "fixtures"))
                  (:file "finger" :depends-on ("package"
                                               "fixtures"))
-                 (:file "condition" :depends-on ("package"
-                                                 "fixtures"))
+                 (:file "error" :depends-on ("package"
+                                             "fixtures"))
                  (:file "run" :depends-on ("package"))))))

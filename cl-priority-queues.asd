@@ -19,5 +19,5 @@
                  (:file "class" :depends-on ("package"
                                              "types"))
                  (:file "finger" :depends-on ("package"))
-                 (:file "condition" :depends-on ("package"
-                                                 "class"))))))
+                 (:file "error" :depends-on ("package"
+                                             "class"))))))

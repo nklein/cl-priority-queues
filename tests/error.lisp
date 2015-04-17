@@ -1,8 +1,8 @@
-;;;; conditions.lisp
+;;;; error.lisp
 
 (in-package #:cl-priority-queues-tests)
 
-(nst:def-test-group conditions-exist-tests (empty-heap)
+(nst:def-test-group heap-error-tests (empty-heap)
   (nst:def-test heap-error-present (:true)
     (find-class 'cl-priority-queues:heap-error nil))
 

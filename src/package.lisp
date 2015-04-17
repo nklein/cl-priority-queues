@@ -11,4 +11,6 @@
            #:heap-test-function)
   ;; conditions.lisp
   (:export #:heap-error
-           #:heap-error-heap))
+           #:heap-error-heap)
+
+  (:documentation "Implementation of CDR-13: Priority Queues for Common Lisp"))

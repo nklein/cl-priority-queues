@@ -11,7 +11,9 @@
            'simple-error))
 
   (nst:def-test heap-error-default-to-nil-heap (:not :true)
-    (heap-error-heap (make-condition 'heap-error)))
+    (cl-priority-queues:heap-error-heap
+     (make-condition 'cl-priority-queues:heap-error)))
 
   (nst:def-test heap-error-settable-heap (:equal empty-heap)
-    (heap-error-heap (make-condition 'heap-error :heap empty-heap))))
+    (cl-priority-queues:heap-error-heap
+     (make-condition 'cl-priority-queues:heap-error :heap empty-heap))))

@@ -8,7 +8,7 @@
          :reader heap-size
          :documentation "The current number of items in the heap.")
 
-   (key-function :initform #'identity
+   (key-function :initarg :key
                  :type heap-key-function
                  :reader heap-key-function
                  :documentation
@@ -16,7 +16,7 @@
 the information which will be used to compare it against other items
 already in the heap.")
 
-   (test-function :initform #'<
+   (test-function :initarg :test
                   :type heap-test-function
                   :reader heap-test-function
                   :documentation
@@ -32,6 +32,8 @@ represent a total order has undefined consequences.
 Note (from CDR-13: 1.3.2 Equal Keys):
 The relative order to elements in a heap that admits equal keys is
 implementation dependent and should not be relied upon."))
+  (:default-initargs :test #'<
+                     :key #'identity)
   (:documentation
 "This class implements HEAP priority queues as defined in CDR-13:
 Priority Queues for Common Lisp.

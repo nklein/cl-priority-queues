@@ -10,7 +10,7 @@
 if not initialized."))
   (:report (lambda (condition stream)
              (format stream
-                     "There is an unspecified heap error~@[ on heap ~A~]"
+                     "There is an unspecified heap error~@[ on heap ~A~]."
                      (heap-error-heap condition))))
   (:default-initargs :heap nil)
   (:documentation

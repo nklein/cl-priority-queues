@@ -24,4 +24,6 @@
                  (:file "empty-error" :depends-on ("package"
                                                    "error"))
                  (:file "invalid-finger-error" :depends-on ("package"
-                                                            "error"))))))
+                                                            "error"))
+                 (:file "invalid-key-error" :depends-on ("package"
+                                                         "error"))))))

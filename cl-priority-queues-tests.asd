@@ -14,6 +14,8 @@
                  (:file "feature" :depends-on ("package"))
                  (:file "class" :depends-on ("package"
                                              "fixtures"))
+                 (:file "constructor" :depends-on ("package"
+                                                   "fixtures"))
                  (:file "finger" :depends-on ("package"
                                               "fixtures"))
                  (:file "error" :depends-on ("package"

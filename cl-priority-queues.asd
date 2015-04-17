@@ -18,6 +18,9 @@
                  (:file "types" :depends-on ("package"))
                  (:file "class" :depends-on ("package"
                                              "types"))
+                 (:file "constructor" :depends-on ("package"
+                                                   "types"
+                                                   "class"))
                  (:file "finger" :depends-on ("package"))
                  (:file "error" :depends-on ("package"
                                              "class"))

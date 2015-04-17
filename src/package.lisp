@@ -12,6 +12,8 @@
            #:heap-total-size
            #:heap-key-function
            #:heap-test-function)
+  ;; constructor.lisp
+  (:export #:make-heap)
   ;; error.lisp
   (:export #:heap-error
            #:heap-error-heap)

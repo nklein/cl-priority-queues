@@ -7,7 +7,7 @@
     (make-condition 'cl-priority-queues:heap-error))
 
   (nst:def-test heap-error-is-simple-error (:true)
-    (typep (make-condition'cl-priority-queues:heap-error)
+    (typep (make-condition 'cl-priority-queues:heap-error)
            'simple-error))
 
   (nst:def-test heap-error-default-to-nil-heap (:not :true)

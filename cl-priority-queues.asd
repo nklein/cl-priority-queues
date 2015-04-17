@@ -5,6 +5,7 @@
   :author "Patrick Stein <pat@nklein.com>"
   :version "0.1.20150417"
   :license "UNLICENSE"
+  :depends-on (#:trivial-garbage)
   :in-order-to ((asdf:test-op (asdf:load-op :cl-priority-queues-tests)))
   :perform (asdf:test-op (o c) (uiop:symbol-call :cl-priority-queues-tests
                                                  :run-tests))
@@ -17,5 +18,6 @@
                  (:file "types" :depends-on ("package"))
                  (:file "class" :depends-on ("package"
                                              "types"))
+                 (:file "finger" :depends-on ("package"))
                  (:file "condition" :depends-on ("package"
                                                  "class"))))))

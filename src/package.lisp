@@ -2,6 +2,9 @@
 
 (defpackage #:cl-priority-queues
   (:use #:cl)
+  ;; finger.lisp
+  (:export #:heap-finger
+           #:heap-finger-p)
   ;; class.lisp
   (:export #:heap
            #:heap-p

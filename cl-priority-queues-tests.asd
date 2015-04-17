@@ -12,6 +12,8 @@
                  (:file "feature" :depends-on ("package"))
                  (:file "class" :depends-on ("package"
                                              "fixtures"))
+                 (:file "finger" :depends-on ("package"
+                                              "fixtures"))
                  (:file "condition" :depends-on ("package"
                                                  "fixtures"))
                  (:file "run" :depends-on ("package"))))))

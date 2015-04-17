@@ -7,3 +7,4 @@ does not quiet conform to the CDR-13 specification and is distributed
 under a more restrictive license than this library.
 
   [cdr-13]: https://common-lisp.net/project/cdr/document/13/index.html
+  [cl-heap]: https://common-lisp.net/project/cl-heap/

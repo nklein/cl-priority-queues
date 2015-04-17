@@ -2,9 +2,6 @@
 
 (in-package #:cl-priority-queues-tests)
 
-(nst:def-fixtures empty-heap ()
-  (empty-heap (make-instance 'heap)))
-
 (nst:def-test-group class-tests ()
   (nst:def-test class-is-present (:true)
     (find-class 'cl-priority-queues:heap nil)))

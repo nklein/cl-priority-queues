@@ -8,6 +8,10 @@
   :components
   ((:module "tests"
     :components ((:file "package")
+                 (:file "fixtures" :depends-on ("package"))
                  (:file "feature" :depends-on ("package"))
-                 (:file "class" :depends-on ("package"))
+                 (:file "class" :depends-on ("package"
+                                             "fixtures"))
+                 (:file "condition" :depends-on ("package"
+                                                 "fixtures"))
                  (:file "run" :depends-on ("package"))))))

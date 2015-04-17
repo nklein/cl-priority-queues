@@ -8,4 +8,7 @@
            #:heap-size
            #:heap-total-size
            #:heap-key-function
-           #:heap-test-function))
+           #:heap-test-function)
+  ;; conditions.lisp
+  (:export #:heap-error
+           #:heap-error-heap))

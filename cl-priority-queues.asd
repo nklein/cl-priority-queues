@@ -16,4 +16,6 @@
                  (:file "feature" :depends-on ("package"))
                  (:file "types" :depends-on ("package"))
                  (:file "class" :depends-on ("package"
-                                             "types"))))))
+                                             "types"))
+                 (:file "condition" :depends-on ("package"
+                                                 "class"))))))

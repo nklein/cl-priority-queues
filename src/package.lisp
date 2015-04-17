@@ -12,8 +12,10 @@
            #:heap-total-size
            #:heap-key-function
            #:heap-test-function)
-  ;; conditions.lisp
+  ;; error.lisp
   (:export #:heap-error
            #:heap-error-heap)
+  ;; empty-error.lisp
+  (:export #:empty-heap-error)
 
   (:documentation "Implementation of CDR-13: Priority Queues for Common Lisp"))

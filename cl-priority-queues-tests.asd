@@ -16,4 +16,6 @@
                                               "fixtures"))
                  (:file "error" :depends-on ("package"
                                              "fixtures"))
+                 (:file "empty-error" :depends-on ("package"
+                                                   "fixtures"))
                  (:file "run" :depends-on ("package"))))))

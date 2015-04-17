@@ -20,4 +20,6 @@
                                              "types"))
                  (:file "finger" :depends-on ("package"))
                  (:file "error" :depends-on ("package"
-                                             "class"))))))
+                                             "class"))
+                 (:file "empty-error" :depends-on ("package"
+                                                   "error"))))))

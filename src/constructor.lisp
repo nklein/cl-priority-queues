@@ -3,10 +3,18 @@
 (in-package #:cl-priority-queues)
 
 (defun remove-from-plist (plist &rest keys)
-  (loop :for key :in plist :by #'cddr
-     :for value :in plist :by #'cddr
-     :unless (member key keys)
-     :append (list key value)))
+  "Remove any KEY/VALUE pair in PLIST if the KEY is in KEYS.  Do this
+preserving as much structure as possible from the original PLIST."
+  (when plist
+    (destructuring-bind (key val &rest rest) plist
+      (let ((new-rest (apply #'remove-from-plist rest keys)))
+        (cond
+          ((member key keys)
+           new-rest)
+          ((eq rest new-rest)
+           plist)
+          (t
+           (list* key val new-rest)))))))
 
 (defun make-heap (&rest
                     all-options

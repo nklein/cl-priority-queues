@@ -15,7 +15,9 @@
    (:module "src"
     :components ((:file "package")
                  (:file "feature" :depends-on ("package"))
-                 (:file "types" :depends-on ("package"))
+                 (:file "node" :depends-on ("package"))
+                 (:file "types" :depends-on ("package"
+                                             "node"))
                  (:file "class" :depends-on ("package"
                                              "types"))
                  (:file "constructor" :depends-on ("package"
@@ -29,4 +31,7 @@
                  (:file "invalid-finger-error" :depends-on ("package"
                                                             "error"))
                  (:file "invalid-key-error" :depends-on ("package"
-                                                         "error"))))))
+                                                         "error"))
+                 (:file "insert" :depends-on ("package"
+                                              "node"
+                                              "class"))))))

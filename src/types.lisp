@@ -13,3 +13,7 @@
 (deftype heap-test-function ()
   "Data type of heap test functions."
   'function)
+
+(deftype heap-node-vector (&optional (length '*))
+  "Data type for a vector of heap nodes."
+  `(vector heap-node ,length))

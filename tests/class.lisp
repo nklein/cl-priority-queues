@@ -8,13 +8,19 @@
 
 (nst:def-test-group predicate-tests (empty-heap)
   (nst:def-test heap-p-on-non-object (:not :true)
-    (heap-p 1))
+    (cl-priority-queues:heap-p 1))
 
   (nst:def-test heap-p-on-non-heap (:not :true)
-    (heap-p (make-instance 'stream)))
+    (cl-priority-queues:heap-p (make-instance 'stream)))
 
   (nst:def-test heap-p-on-heap (:true)
-    (heap-p empty-heap)))
+    (cl-priority-queues:heap-p empty-heap))
+
+  (nst:def-test empty-heap-p-on-empty-heap (:true)
+    (cl-priority-queues:empty-heap-p empty-heap))
+
+  (nst:def-test full-heap-p-on-empty-heap (:not :true)
+    (cl-priority-queues:full-heap-p empty-heap)))
 
 (nst:def-test-group reader-tests (empty-heap)
   (nst:def-test heap-size-on-empty-heap (:equal 0)

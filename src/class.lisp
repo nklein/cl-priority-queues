@@ -6,6 +6,7 @@
   ((size :initform 0
          :type heap-size
          :reader heap-size
+         :accessor %heap-size
          :documentation "The current number of items in the heap.")
 
    (key-function :initarg :key
@@ -23,6 +24,9 @@ already in the heap.")
 "A function which takes two keys and returns a generalized boolean
 indicating whether the first item precedes the second.
 
+This heap implementation is a BINOMIAL HEAP.  This heap is never full.
+It will allocate new nodes so long as memory is available..
+
 Note (from CDR-13: 1.3.1 Heap Test must be a Total Order): There is no
 way for a Common Lisp implementation to check and ensure that the
 function that becomes the heap test (cfr., the constuctor make-heap)
@@ -31,7 +35,13 @@ represent a total order has undefined consequences.
 
 Note (from CDR-13: 1.3.2 Equal Keys):
 The relative order to elements in a heap that admits equal keys is
-implementation dependent and should not be relied upon."))
+implementation dependent and should not be relied upon.")
+
+   (trees :initform #()
+          :accessor heap-trees
+          :type heap-node-vector
+          :documentation "The trees which make up this binomial heap."))
+
   (:default-initargs :test #'<
                      :key #'identity)
   (:documentation
@@ -47,6 +57,19 @@ non-null value if presented with a HEAP OBJECT."
 
 (defgeneric heap-total-size (heap)
   (:method ((heap heap))
-    "The current number of allocated items in the heap."
+    "The current number of allocated items for this heap."
     (heap-size heap))
-  (:documentation "The current number of allocated items in the heap."))
+  (:documentation "The current number of allocated items for this heap."))
+
+(defgeneric empty-heap-p (heap)
+  (:method ((heap heap))
+    "Returns whether the heap is empty."
+    (zerop (heap-size heap)))
+  (:documentation "Returns whether the heap is empty."))
+
+(defgeneric full-heap-p (heap)
+  (:method ((heap heap))
+    "Returns whether the heap is full.  The default HEAP
+implementation never returns full."
+    nil)
+  (:documentation "Returns whether the heap is full."))

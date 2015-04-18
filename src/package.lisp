@@ -11,7 +11,9 @@
            #:heap-size
            #:heap-total-size
            #:heap-key-function
-           #:heap-test-function)
+           #:heap-test-function
+           #:empty-heap-p
+           #:full-heap-p)
   ;; constructor.lisp
   (:export #:make-heap)
   ;; error.lisp
@@ -24,5 +26,7 @@
   ;; invalid-key-error.lisp
   (:export #:invalid-key-error
            #:invalid-key-error-offender)
+  ;; insert.lisp
+  (:export #:insert)
 
   (:documentation "Implementation of CDR-13: Priority Queues for Common Lisp"))

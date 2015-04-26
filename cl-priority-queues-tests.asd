@@ -24,4 +24,5 @@
                  (:file "invalid-finger-error" :depends-on ("package"))
                  (:file "invalid-key-error" :depends-on ("package"))
                  (:file "insert" :depends-on ("package"))
+                 (:file "peek" :depends-on ("package"))
                  (:file "run" :depends-on ("package"))))))

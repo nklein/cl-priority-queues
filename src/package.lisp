@@ -28,5 +28,7 @@
            #:invalid-key-error-offender)
   ;; insert.lisp
   (:export #:insert)
+  ;; peek.lisp
+  (:export #:peek)
 
   (:documentation "Implementation of CDR-13: Priority Queues for Common Lisp"))

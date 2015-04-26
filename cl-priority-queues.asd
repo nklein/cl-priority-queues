@@ -5,7 +5,7 @@
   :author "Patrick Stein <pat@nklein.com>"
   :version "0.1.20150417"
   :license "UNLICENSE"
-  :depends-on (#:trivial-garbage)
+  :depends-on (#:trivial-garbage #:alexandria)
   :in-order-to ((asdf:test-op (asdf:load-op :cl-priority-queues-tests)))
   :perform (asdf:test-op (o c) (uiop:symbol-call :cl-priority-queues-tests
                                                  :run-tests))
@@ -34,4 +34,7 @@
                                                          "error"))
                  (:file "insert" :depends-on ("package"
                                               "node"
-                                              "class"))))))
+                                              "class"))
+                 (:file "peek" :depends-on ("package"
+                                            "node"
+                                            "class"))))))

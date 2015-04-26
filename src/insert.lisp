@@ -2,16 +2,6 @@
 
 (in-package #:cl-priority-queues)
 
-(declaim (inline heap-key))
-(defun heap-key (heap value)
-  (funcall (heap-key-function heap) value))
-
-(declaim (inline heap-<))
-(defun heap-< (heap node-a node-b)
-  (funcall (heap-test-function heap)
-           (heap-node-key node-a)
-           (heap-node-key node-b)))
-
 (declaim (inline vector*))
 (defun vector* (item rest)
   (concatenate 'vector (vector item) rest))

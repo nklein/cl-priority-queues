@@ -11,8 +11,10 @@
            'cl-priority-queues:heap-error))
 
   (nst:def-test invalid-finger-error-is-cell-error (:true)
-    (typep (make-condition 'cl-priority-queues:invalid-heap-finger-error)
-           'cell-error))
+    (let* ((error-symbol 'cl-priority-queues:invalid-heap-finger-error)
+           (error-class (find-class error-symbol)))
+      (member (find-class 'cl-priority-queues:heap-error)
+              (closer-mop:class-direct-superclasses error-class))))
 
   (nst:def-test invalid-finger-error-is-more-heap-error-than-cell-error (:true)
     (let* ((class (find-class 'cl-priority-queues:invalid-heap-finger-error))

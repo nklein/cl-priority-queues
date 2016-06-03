@@ -7,8 +7,9 @@
     (make-condition 'cl-priority-queues:invalid-key-error))
 
   (nst:def-test invalid-key-error-is-heap-error (:true)
-    (typep (make-condition 'cl-priority-queues:invalid-key-error)
-           'cl-priority-queues:heap-error))
+    (let ((error-class (find-class 'cl-priority-queues:invalid-key-error)))
+      (member (find-class 'cl-priority-queues:heap-error)
+              (closer-mop:class-direct-superclasses error-class))))
 
   (nst:def-test offender-defaults-to-nil (:not :true)
     (cl-priority-queues:invalid-key-error-offender

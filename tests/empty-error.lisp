@@ -7,5 +7,6 @@
     (make-condition 'cl-priority-queues:empty-heap-error))
 
   (nst:def-test empty-heap-error-is-heap-error (:true)
-    (typep (make-condition 'cl-priority-queues:empty-heap-error)
-           'cl-priority-queues:heap-error)))
+    (let ((error-class (find-class 'cl-priority-queues:empty-heap-error)))
+      (member (find-class 'cl-priority-queues:heap-error)
+              (closer-mop:class-direct-superclasses error-class)))))

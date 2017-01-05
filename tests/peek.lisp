@@ -19,4 +19,10 @@
     (let ((heap (cl-priority-queues:make-heap)))
       (cl-priority-queues:insert heap 37)
       (cl-priority-queues:insert heap 41)
+      (cl-priority-queues:peek heap)))
+
+  (nst:def-test peek-two-items-reversed (:equal 37)
+    (let ((heap (cl-priority-queues:make-heap)))
+      (cl-priority-queues:insert heap 41)
+      (cl-priority-queues:insert heap 37)
       (cl-priority-queues:peek heap))))

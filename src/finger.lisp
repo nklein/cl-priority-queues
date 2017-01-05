@@ -29,3 +29,10 @@ a non-null value if presented with a HEAP-FINGER OBJECT."
   "Retrieve the node referenced by the HEAP-FINGER."
   (check-type finger heap-finger)
   (trivial-garbage:weak-pointer-value (heap-finger-pointer finger)))
+
+(declaim (inline checked-heap-finger-value))
+(defun checked-heap-finger-value (heap finger)
+  (let ((node (heap-finger-value finger)))
+    (unless node
+      (error 'invalid-heap-finger-error :heap heap :name finger))
+    node))

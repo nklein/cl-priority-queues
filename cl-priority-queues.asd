@@ -23,7 +23,8 @@
                  (:file "constructor" :depends-on ("package"
                                                    "types"
                                                    "class"))
-                 (:file "finger" :depends-on ("package"))
+                 (:file "finger" :depends-on ("package"
+                                              "invalid-finger-error"))
                  (:file "error" :depends-on ("package"
                                              "class"))
                  (:file "empty-error" :depends-on ("package"
@@ -37,4 +38,16 @@
                                               "class"))
                  (:file "peek" :depends-on ("package"
                                             "node"
-                                            "class"))))))
+                                            "class"))
+                 (:file "value-at" :depends-on ("package"
+                                                "node"
+                                                "class"
+                                                "finger"))
+                 (:file "key-at" :depends-on ("package"
+                                              "node"
+                                              "class"
+                                              "finger"))
+                 (:file "content-at" :depends-on ("package"
+                                                  "node"
+                                                  "class"
+                                                  "finger"))))))

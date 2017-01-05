@@ -25,4 +25,7 @@
                  (:file "invalid-key-error" :depends-on ("package"))
                  (:file "insert" :depends-on ("package"))
                  (:file "peek" :depends-on ("package"))
+                 (:file "value-at" :depends-on ("package"))
+                 (:file "key-at" :depends-on ("package"))
+                 (:file "content-at" :depends-on ("package"))
                  (:file "run" :depends-on ("package"))))))

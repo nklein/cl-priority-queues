@@ -31,4 +31,14 @@
   ;; peek.lisp
   (:export #:peek)
 
+  ;; value-at.lisp
+  (:export #:value-at)
+
+  ;; key-at.lisp
+  (:export #:key-at)
+
+  ;; content-at.lisp
+  (:export #:content-at
+           #:content-at*)
+
   (:documentation "Implementation of CDR-13: Priority Queues for Common Lisp"))

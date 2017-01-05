@@ -2,7 +2,7 @@
 
 (in-package #:cl-priority-queues-tests)
 
-(nst:def-test-group invalid-heap-finger-error-tests ()
+(nst:def-test-group invalid-heap-finger-error-tests (empty-heap)
   (nst:def-test invalid-heap-finger-error-present (:true)
     (make-condition 'cl-priority-queues:invalid-heap-finger-error))
 
@@ -21,4 +21,11 @@
            (precedence (closer-mop:class-precedence-list class))
            (after (member (find-class 'cl-priority-queues:heap-error)
                           precedence)))
-      (member (find-class 'cell-error) after))))
+      (member (find-class 'cell-error) after)))
+
+  (nst:def-test invalid-finger-error-finger-set-with-name-keyword
+      (:equal :bad)
+    (cell-error-name
+     (make-condition 'cl-priority-queues:invalid-heap-finger-error
+                     :heap empty-heap
+                     :name :bad))))

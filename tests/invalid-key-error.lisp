@@ -13,4 +13,8 @@
 
   (nst:def-test offender-defaults-to-nil (:not :true)
     (cl-priority-queues:invalid-key-error-offender
-     (make-condition 'cl-priority-queues:invalid-key-error))))
+     (make-condition 'cl-priority-queues:invalid-key-error)))
+
+  (nst:def-test offender-set-with-offender-keyword (:equal :bad)
+    (cl-priority-queues:invalid-key-error-offender
+     (make-condition 'cl-priority-queues:invalid-key-error :offender :bad))))

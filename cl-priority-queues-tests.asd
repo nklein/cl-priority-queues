@@ -21,7 +21,8 @@
                  (:file "error" :depends-on ("package"
                                              "fixtures"))
                  (:file "empty-error" :depends-on ("package"))
-                 (:file "invalid-finger-error" :depends-on ("package"))
+                 (:file "invalid-finger-error" :depends-on ("package"
+                                                            "fixtures"))
                  (:file "invalid-key-error" :depends-on ("package"))
                  (:file "insert" :depends-on ("package"))
                  (:file "peek" :depends-on ("package"))
